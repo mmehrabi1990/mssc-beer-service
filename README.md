@@ -1,1 +1,3 @@
-# mssc-beer-service
+# springframework-webservices
+
+Spring Boot Microservice Example
