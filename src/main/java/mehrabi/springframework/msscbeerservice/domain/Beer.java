@@ -6,10 +6,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.UpdateTimestamp;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 import java.util.UUID;
@@ -28,7 +25,7 @@ public class Beer {
     @Column(length = 36,columnDefinition = "varchar",updatable = false,nullable = false)
     private UUID id;
 
-    @Column
+    @Version
     private Integer version;
 
     @CreationTimestamp
@@ -40,12 +37,13 @@ public class Beer {
 
     private String beerName;
 
-    private BeerStyleEnum beerStyle;
+    private String beerStyle;
 
     @Column(unique = true)
     private Long upc;
 
     private BigDecimal price;
 
-    private Integer quantityOnHand;
+    private Integer minOnHand;
+    private Integer quantityToBrew;
 }
