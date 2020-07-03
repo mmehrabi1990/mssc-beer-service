@@ -1,5 +1,6 @@
 package mehrabi.springframework.msscbeerservice.bootstrap;
 
+import lombok.extern.slf4j.Slf4j;
 import mehrabi.springframework.msscbeerservice.domain.Beer;
 import mehrabi.springframework.msscbeerservice.repositories.BeerRepository;
 import org.springframework.boot.CommandLineRunner;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Component;
 import java.math.BigDecimal;
 
 @Component
+@Slf4j
 public class BeerLoader implements CommandLineRunner {
 
     private final BeerRepository beerRepository;
@@ -17,7 +19,7 @@ public class BeerLoader implements CommandLineRunner {
     }
 
     @Override
-    public void run(String... args) throws Exception {
+    public void run(String... args) {
         loadBeerObjects();
     }
 
@@ -39,7 +41,7 @@ public class BeerLoader implements CommandLineRunner {
                     .upc(337010000002L)
                     .price(new BigDecimal("11.95")).build());
 
-            System.out.println("Loaded Beers : "+beerRepository.count());
+            log.debug("Loaded Beers : "+beerRepository.count());
         }
     }
 }

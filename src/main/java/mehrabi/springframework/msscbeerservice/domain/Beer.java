@@ -1,7 +1,6 @@
 package mehrabi.springframework.msscbeerservice.domain;
 
 import lombok.*;
-import mehrabi.springframework.msscbeerservice.web.model.BeerStyleEnum;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -9,7 +8,6 @@ import org.hibernate.annotations.UpdateTimestamp;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
-import java.time.OffsetDateTime;
 import java.util.UUID;
 
 @Getter
